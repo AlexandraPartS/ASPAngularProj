@@ -12,7 +12,7 @@ let AppComponent = class AppComponent {
 };
 AppComponent = __decorate([
     Component({
-        selector: 'app',
+        selector: 'app-root',
         templateUrl: './app.component.html'
     })
 ], AppComponent);

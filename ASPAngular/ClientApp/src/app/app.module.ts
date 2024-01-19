@@ -15,23 +15,17 @@ import { Employee } from './empl-data/employee';
     declarations: [
         AppComponent,
         NavMenuComponent,
-        HomeComponent,
-        EmplDataComponent
+        HomeComponent//,
+        //EmplDataComponent
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         FormsModule,
-        Employee,
-        DataService,
         RouterModule.forRoot([
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: 'empl-data', component: EmplDataComponent },
         ])
-    ],
-    entryComponents: [
-        Employee,
-        DataService
     ],
     providers: [DataService],
     bootstrap: [AppComponent]

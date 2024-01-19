@@ -1,8 +1,7 @@
-﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from './empl-data/data.service';
+﻿import { Component } from '@angular/core';
       
 @Component({
-    selector: 'app',
+    selector: 'app-root',
     templateUrl: './app.component.html'
 })
 export class AppComponent {

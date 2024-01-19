@@ -1,31 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from "@angular/forms"
+
 import { DataService } from './data.service';
 import { Employee } from './employee';
+;
 
 @Component({
-    imports: [
-        Employee
-    ],
     selector: 'app-empl-data',
+    standalone: true,
     templateUrl: './empl-data.component.html',
-    providers: [DataService]
+    providers: [DataService],
+    imports: [FormsModule]
 })
-//export class EmplDataComponent {
-//  public forecasts: WeatherForecast[] = [];
-
-//  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-//    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-//      this.forecasts = result;
-//    }, error => console.error(error));
-//  }
-//}
-
-//interface WeatherForecast {
-//  date: string;
-//  temperatureC: number;
-//  temperatureF: number;
-//  summary: string;
-//}
 
 export class EmplDataComponent implements OnInit {
 

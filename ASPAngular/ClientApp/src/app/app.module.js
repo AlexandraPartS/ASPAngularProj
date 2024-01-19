@@ -14,7 +14,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { EmplDataComponent } from './empl-data/empl-data.component';
 import { DataService } from './empl-data/data.service';
-import { Employee } from './empl-data/employee';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -22,23 +21,17 @@ AppModule = __decorate([
         declarations: [
             AppComponent,
             NavMenuComponent,
-            HomeComponent,
-            EmplDataComponent
+            HomeComponent //,
+            //EmplDataComponent
         ],
         imports: [
             BrowserModule,
             HttpClientModule,
             FormsModule,
-            Employee,
-            DataService,
             RouterModule.forRoot([
                 { path: '', component: HomeComponent, pathMatch: 'full' },
                 { path: 'empl-data', component: EmplDataComponent },
             ])
-        ],
-        entryComponents: [
-            Employee,
-            DataService
         ],
         providers: [DataService],
         bootstrap: [AppComponent]

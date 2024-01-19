@@ -5,24 +5,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Component } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 import { DataService } from './data.service';
 import { Employee } from './employee';
-let EmplDataComponent = 
-//export class EmplDataComponent {
-//  public forecasts: WeatherForecast[] = [];
-//  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-//    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-//      this.forecasts = result;
-//    }, error => console.error(error));
-//  }
-//}
-//interface WeatherForecast {
-//  date: string;
-//  temperatureC: number;
-//  temperatureF: number;
-//  summary: string;
-//}
-class EmplDataComponent {
+;
+let EmplDataComponent = class EmplDataComponent {
     constructor(dataService) {
         this.dataService = dataService;
         this.employee = new Employee();
@@ -64,27 +51,12 @@ class EmplDataComponent {
 };
 EmplDataComponent = __decorate([
     Component({
-        imports: [
-            Employee
-        ],
         selector: 'app-empl-data',
+        standalone: true,
         templateUrl: './empl-data.component.html',
-        providers: [DataService]
+        providers: [DataService],
+        imports: [FormsModule]
     })
-    //export class EmplDataComponent {
-    //  public forecasts: WeatherForecast[] = [];
-    //  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    //    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-    //      this.forecasts = result;
-    //    }, error => console.error(error));
-    //  }
-    //}
-    //interface WeatherForecast {
-    //  date: string;
-    //  temperatureC: number;
-    //  temperatureF: number;
-    //  summary: string;
-    //}
 ], EmplDataComponent);
 export { EmplDataComponent };
 //# sourceMappingURL=empl-data.component.js.map
