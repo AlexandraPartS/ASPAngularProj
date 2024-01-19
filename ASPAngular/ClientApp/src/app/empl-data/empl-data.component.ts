@@ -1,9 +1,14 @@
-import { Component, Inject } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+import { Employee } from './employee';
 
 @Component({
+    imports: [
+        Employee
+    ],
     selector: 'app-empl-data',
-    templateUrl: './empl-data.component.html'
+    templateUrl: './empl-data.component.html',
+    providers: [DataService]
 })
 //export class EmplDataComponent {
 //  public forecasts: WeatherForecast[] = [];
@@ -21,14 +26,51 @@ import { Component, Inject } from '@angular/core';
 //  temperatureF: number;
 //  summary: string;
 //}
-export class Employee {
-    constructor(
-        public id?: number,
-        public name?: string,
-        public birthday?: string,
-        public employmentDate?: string,
-        public salary?: number,
-        public departmentName?: string,
-        public departmentId?: number
-    ) { }
+
+export class EmplDataComponent implements OnInit {
+
+    employee: Employee = new Employee();
+    employees: Employee[];
+    tableMode: boolean = true;
+
+    constructor(private dataService: DataService) { }
+
+    ngOnInit() {
+        this.loadProducts();
+    }
+
+    loadProducts() {
+        this.dataService.getEmployees()
+            .subscribe((data: Employee[]) => this.employees = data);
+    }
+
+    save() {
+        if (this.employee.id == null) {
+            this.dataService.createEmployee(this.employee)
+                .subscribe((data: Employee) => this.employees.push(data));
+        } else {
+            this.dataService.updateEmployee(this.employee)
+                .subscribe(data => this.loadProducts());
+        }
+        this.cancel();
+    }
+
+    editProduct(p: Employee) {
+        this.employee = p;
+    }
+
+    cancel() {
+        this.employee = new Employee();
+        this.tableMode = true;
+    }
+
+    delete(p: Employee) {
+        this.dataService.deleteEmployee(p.id)
+            .subscribe(data => this.loadProducts());
+    }
+
+    add() {
+        this.cancel();
+        this.tableMode = false;
+    }
 }

@@ -1,6 +1,6 @@
 ﻿import { Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Employee } from './empl-data.component';
+import { Employee } from './employee';
 //import { Employee } from './app/empl-data/empl-data.component';
 
 @Inject('BASE_URL')

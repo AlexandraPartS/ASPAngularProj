@@ -14,7 +14,11 @@ builder.Services.AddSpaStaticFiles(configuration =>
     configuration.RootPath = "ClientApp/dist";
 });
 
+
+
 var app = builder.Build();
+
+
 
 //Middlewares
 if (app.Environment.IsDevelopment())
@@ -36,9 +40,6 @@ app.UseEndpoints(endpoints =>
 
 });
 
-
-//app.Map("/qw", (backend.Data.AppContext db) => db.Employees.ToList());
-
 app.UseSpa(spa =>
 {
     spa.Options.SourcePath = "ClientApp";
@@ -50,9 +51,7 @@ app.UseSpa(spa =>
     }
 });
 
-Console.WriteLine($"SASHA!!!   {app.Environment.EnvironmentName}");
-//app.MapGet("/", (backend.Data.AppContext db) => db.Employees.ToList());
-//app.MapGet("/", (backend.Data.AppContext db) => db.Employees.Include(x => x.DepartmentId).ToList());
+Console.WriteLine($"Angular project^   {app.Environment.EnvironmentName}");
 
 app.Run();
 

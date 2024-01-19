@@ -1,8 +1,25 @@
 <h1 id="tableLabel">A list of employees</h1>
 
 <!--<p *ngIf="!employees"><em>Loading...</em></p>-->
+<p *ngIf="!forecasts"><em>Loading...</em></p>
 
-<input type="button" value="Добавить" class="btn btn-default" (click)="add()" />
+<!--<input type="button" value="Add" class="btn btn-default" (click)="add()" />-->
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+        </tr>
+    </tbody>
+</table>
+
 
 <!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="tableMode; else create">
   <thead>
