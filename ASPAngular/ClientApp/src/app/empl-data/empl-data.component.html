@@ -1,0 +1,72 @@
+<h1 id="tableLabel">A list of employees</h1>
+
+<!--<p *ngIf="!employees"><em>Loading...</em></p>-->
+
+<input type="button" value="Добавить" class="btn btn-default" (click)="add()" />
+
+<!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="tableMode; else create">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>EmploymentDate</th>
+      <th>Salary</th>
+      <th>DepartmentName</th>
+      <th>DepartmentId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of employees">
+        <ng-template [ngIf]="employee?.id != e.id" [ngIfElse]="edit">
+            <td>{{ e.id }}</td>
+            <td>{{ e.name }}</td>
+            <td>{{ e.birthday }}</td>
+            <td>{{ e.employmentDate }}</td>
+            <td>{{ e.salary }}</td>
+            <td>{{ e.departmentName }}</td>
+            <td>{{ e.departmentId }}</td>
+        </ng-template>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #edit>
+    <td>
+        <input type="text" [(ngModel)]="employee.name" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="employee.birthday" class="form-control" />
+    </td>
+    <td>
+        <input type="number" [(ngModel)]="employee.salary" class="form-control" />
+    </td>
+    <td>
+        <input type="button" value="Сохранить" (click)="save()" class="btn btn-sm btn-success" />
+        <input type="button" value="Отмена" (click)="cancel()" class="btn btn-sm btn-warning" />
+    </td>
+</ng-template>
+
+
+<ng-template #create>
+    <div class="form-group">
+        <label>Employee Name</label>
+        <input type="text" [(ngModel)]="product.name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Employee birthday</label>
+        <input type="text" [(ngModel)]="product.birthday" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Employee salary</label>
+        <input type="text" [(ngModel)]="product.salary" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>DepartmentName</label>
+        <input type="number" [(ngModel)]="product.departmentName" class="form-control" />
+    </div>
+    <div>
+        <input type="button" value="Сохранить" (click)="save()" class="btn btn-success" />
+        <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+    </div>
+</ng-template>-->
