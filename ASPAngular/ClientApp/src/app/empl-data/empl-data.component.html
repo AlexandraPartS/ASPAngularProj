@@ -33,6 +33,8 @@
     </tbody>
 </table>
 
+<!--<modaldelete-comp>Загрузка...</modaldelete-comp>-->
+
 <ng-template #edit>
     <td>
         <input type="text" [(ngModel)]="employee.name" class="form-control" />
@@ -65,7 +67,7 @@
     </div>
     <div class="form-group">
         <label>DepartmentName</label>
-        <input type="number" [(ngModel)]="employee.departmentName" class="form-control" />
+        <input type="text" [(ngModel)]="employee.departmentName" class="form-control" />
     </div>
     <div>
         <input type="button" value="Save" (click)="save()" class="btn btn-success" />

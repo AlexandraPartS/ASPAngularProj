@@ -1,7 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from './employee';
-//import { Employee } from './app/empl-data/empl-data.component';
 
 @Injectable()
 export class DataService {

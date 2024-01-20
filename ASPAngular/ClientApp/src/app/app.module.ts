@@ -15,8 +15,8 @@ import { Employee } from './empl-data/employee';
     declarations: [
         AppComponent,
         NavMenuComponent,
-        HomeComponent//,
-        //EmplDataComponent
+        HomeComponent,
+        EmplDataComponent
     ],
     imports: [
         BrowserModule,
@@ -30,4 +30,5 @@ import { Employee } from './empl-data/employee';
     providers: [DataService],
     bootstrap: [AppComponent]
 })
-export class AppModule { Employee }
+export class AppModule { }
+//export class AppModule { Employee }

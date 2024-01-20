@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from "@angular/forms"
 
+//import { ModalDeleteComponent } from './modal-delete.component';
 import { DataService } from './data.service';
 import { Employee } from './employee';
 ;
 
 @Component({
     selector: 'app-empl-data',
-    standalone: true,
+    //imports: [ModalDeleteComponent],
     templateUrl: './empl-data.component.html',
-    providers: [DataService],
-    imports: [FormsModule]
+    providers: [DataService]//,
 })
 
 export class EmplDataComponent implements OnInit {
@@ -22,10 +21,10 @@ export class EmplDataComponent implements OnInit {
     constructor(private dataService: DataService) { }
 
     ngOnInit() {
-        this.loadProducts();
+        this.loadEmployees();
     }
 
-    loadProducts() {
+    loadEmployees() {
         this.dataService.getEmployees()
             .subscribe((data: Employee[]) => this.employees = data);
     }
@@ -36,7 +35,7 @@ export class EmplDataComponent implements OnInit {
                 .subscribe((data: Employee) => this.employees.push(data));
         } else {
             this.dataService.updateEmployee(this.employee)
-                .subscribe(data => this.loadProducts());
+                .subscribe(data => this.loadEmployees());
         }
         this.cancel();
     }
@@ -52,7 +51,7 @@ export class EmplDataComponent implements OnInit {
 
     delete(p: Employee) {
         this.dataService.deleteEmployee(p.id)
-            .subscribe(data => this.loadProducts());
+            .subscribe(data => this.loadEmployees());
     }
 
     add() {

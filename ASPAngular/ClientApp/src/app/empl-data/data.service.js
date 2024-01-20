@@ -10,6 +10,7 @@ let DataService = class DataService {
     constructor(http) {
         this.http = http;
         this.url = "/api/empl";
+        console.log("----x  1  I here");
     }
     getEmployees() {
         return this.http.get(this.url);

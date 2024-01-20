@@ -21,8 +21,8 @@ AppModule = __decorate([
         declarations: [
             AppComponent,
             NavMenuComponent,
-            HomeComponent //,
-            //EmplDataComponent
+            HomeComponent,
+            EmplDataComponent
         ],
         imports: [
             BrowserModule,
@@ -38,4 +38,5 @@ AppModule = __decorate([
     })
 ], AppModule);
 export { AppModule };
+//export class AppModule { Employee }
 //# sourceMappingURL=app.module.js.map

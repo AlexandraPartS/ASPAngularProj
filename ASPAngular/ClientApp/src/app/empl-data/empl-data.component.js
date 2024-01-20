@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Component } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+//import { FormsModule } from "@angular/forms"
 import { DataService } from './data.service';
 import { Employee } from './employee';
 ;
@@ -16,9 +16,10 @@ let EmplDataComponent = class EmplDataComponent {
         this.tableMode = true;
     }
     ngOnInit() {
-        this.loadProducts();
+        this.loadEmployees();
+        console.log("----x  2  I here");
     }
-    loadProducts() {
+    loadEmployees() {
         this.dataService.getEmployees()
             .subscribe((data) => this.employees = data);
     }
@@ -29,7 +30,7 @@ let EmplDataComponent = class EmplDataComponent {
         }
         else {
             this.dataService.updateEmployee(this.employee)
-                .subscribe(data => this.loadProducts());
+                .subscribe(data => this.loadEmployees());
         }
         this.cancel();
     }
@@ -42,7 +43,7 @@ let EmplDataComponent = class EmplDataComponent {
     }
     delete(p) {
         this.dataService.deleteEmployee(p.id)
-            .subscribe(data => this.loadProducts());
+            .subscribe(data => this.loadEmployees());
     }
     add() {
         this.cancel();
@@ -52,10 +53,10 @@ let EmplDataComponent = class EmplDataComponent {
 EmplDataComponent = __decorate([
     Component({
         selector: 'app-empl-data',
-        standalone: true,
+        //standalone: true,
         templateUrl: './empl-data.component.html',
-        providers: [DataService],
-        imports: [FormsModule]
+        providers: [DataService] //,
+        //imports: [FormsModule]
     })
 ], EmplDataComponent);
 export { EmplDataComponent };

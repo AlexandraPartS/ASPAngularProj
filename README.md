@@ -12,14 +12,16 @@ frontend
 1. [x]  frontend - set & load
 
 2. [x]  Menu
-3. [ ]  Table (data from DB)
+3. [x]  Table (data from DB)
 4. [ ]  Bootstrap
 
 5. [ ]  filter
 6. [ ]  sorting
-7. [ ]  modal create
-8. [ ]  modal edit
-9. [ ]  modal delete
+7. [x]  delete
+8. [ ]  **models mapping**
+9. [ ]  modal create - state: POST error
+10. [ ]  modal edit - state: PUT error
+11. [ ]  modal delete
 
 _________
 _________
